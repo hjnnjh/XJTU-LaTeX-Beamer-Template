@@ -1,0 +1,4 @@
+*.nav
+*.snm
+*.gz
+.DS_Store
