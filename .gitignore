@@ -2,3 +2,6 @@
 *.snm
 *.gz
 .DS_Store
+*.vrb
+*.pygtex
+*.pygstyle

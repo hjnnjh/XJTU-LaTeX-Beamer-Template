@@ -1,12 +1,19 @@
 \documentclass{beamer}
-\usepackage{ctex, hyperref}
+\usepackage{ctex, hyperref, fontspec}
 \usepackage[T1]{fontenc}
 
 % other packages
 \usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
 \usepackage{graphicx,pstricks,listings,stackengine}
 \usepackage{caption,array,amssymb}
+\usepackage{minted} % code block environment
 \usepackage{xjtu}
+
+% font and style
+\usemintedstyle{manni} % code block style
+\usefonttheme[onlymath]{serif} % font in math environment
+% \setsansfont{PingFang SC} % make sure your system has this font
+% \setCJKsansfont{STSongti-SC-Bold} % Chinese font, make sure your system has this font
 
 % set background picture
 \setbeamertemplate{background}{
@@ -21,8 +28,6 @@
  \def\bibhang{24pt}%
  \def\newblock{\ }%
  \def\BIBand{and}%
-
-\setsansfont{PingFang SC}
 
 \author{Add Your Name Here}
 \title{Add Title Here}
@@ -51,7 +56,6 @@
 
 \begin{document}
 
-\kaishu
 \begin{frame}
     \titlepage
     \begin{figure}[htpb]
@@ -63,6 +67,14 @@
 
 \begin{frame}
     \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+\begin{frame}[fragile]{Code Block Example}
+    \begin{minted}[fontsize=\tiny]{python3}
+        class ProdLDA(nn.Module):
+            def __init__(self, vocab_size, num_topics, hidden, dropout):
+                super().__init__()
+    \end{minted}
 \end{frame}
 
 \begin{frame}
