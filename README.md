@@ -6,7 +6,7 @@
 ## Main Changes (2023.10.12 update)
 - Add support to `PingFang SC` font in the titles, footnotes, etc. of each slide.
 - Apart from `xjtu.bst` bib style file, I provide support to `informs2014.bst` bib style file. The corresponding modification is made in `silde.tex`.
-- Add support to `annotate-equations`, this macro package is used to annotate equations. See [this link](https://github.com/st--/annotate-equations) for more details.
+- Add support to `annotate-equations`, this macro package is used to annotate equations. To use this feature, I suggest updating the `TexLive` or `MacTex` to the latest version and using `latexmk` compile this project. See [this link](https://github.com/st--/annotate-equations) for more details.
 
 ## Usage
 - The main file is `slide.tex`. You can modify the content of each slide in `slide.tex`.
