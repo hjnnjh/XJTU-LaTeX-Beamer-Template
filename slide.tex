@@ -7,12 +7,13 @@
 \usepackage{graphicx,pstricks,listings,stackengine}
 \usepackage{caption,array,amssymb}
 \usepackage{minted} % code block environment
+\usepackage{annotate-equations}
 \usepackage{xjtu}
 
 % font and style
 \usemintedstyle{manni} % code block style
 \usefonttheme[onlymath]{serif} % font in math environment
-% \setsansfont{PingFang SC} % make sure your system has this font
+% \setsansfont{PingFang SC} % Make sure your system has this font
 % \setCJKsansfont{STSongti-SC-Bold} % Chinese font, make sure your system has this font
 
 % set background picture
@@ -67,6 +68,17 @@
 
 \begin{frame}
     \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+\begin{frame}{Support eqn-annotation}
+    \begin{align*}
+		\begin{aligned}
+			{\left[\{U\}^{t=1: \tau}, V, \Theta\right] } & =\underset{\{U\}^{t=1: \tau}, V, \Theta}{\operatorname{argmin}} \sum_{i=1}^n \sum_{j=1}^{p+n} \sum_{t=1}^\tau\left\|z_{i j}^t-\eqnmarkbox[red]{mathrm-g}{\mathrm{g}}\left(v_j^{\top} \eqnmarkbox[blue]{u-i-t-1}{u_i^t} ; \Theta\right)\right\|_2^2 \\
+			& +\lambda_U \sum_{i=1}^n \sum_{t=1}^\tau\left\|\eqnmarkbox[blue]{u-i-t-2}{u_i^t}\right\|_2^2+\lambda_V \sum_{j=1}^{p+n}\left\|v_j\right\|_2^2
+		\end{aligned}
+	\end{align*}
+	\annotate[yshift=1em]{left}{mathrm-g}{$\mathrm{g}(\cdot)$ encodes the neural network parameterized by $\Theta$}
+	\annotate[yshift=-1em]{below,left}{u-i-t-2}{$u_i^t=f\left(u_i^{t-1}\right)$}
 \end{frame}
 
 \begin{frame}[fragile]{Code Block Example}
